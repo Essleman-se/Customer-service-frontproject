@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12" style="margin-top: 10px;">
+        <div class="card m-1">
+            <div class="card-body" style="padding-top: 5px;">
+                <h2>Customer Dashbord</h2>
+                <label>Category</label>
+                <ng-select class="custom custom-select" [items]="catList" (change)="getCategorySelected($event)"
+                    bindLabel="name" bindValue="id" placeholder="Choose Your Category"
+                    style="width: 100% !important;height: 29px;" required>
+                </ng-select>
+
+                <!-- <nav class="navbar">
+                    <input type="text" class="form-control" [(ngModel)]="searchString"
+                        placeholder="Enter First Name to Search" />
+                    
+                </nav> -->
+                <!-- <input type="text" class="form-control" name="fname" [(ngModel)]="searchString" (ngModelChange) = "search()" placeholder="Enter First Name to Search"/> -->
+
+                <input type="text" class="form-control" name="fname" [(ngModel)]="searchString"
+                    placeholder="Enter First Name to Search" style="width: 160px;float: right; margin-bottom: 20px; margin-top: 10px; margin-right: 10px;" />
+
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <input id="checkAll" class="" type="checkbox" name="allSel" [checked]="selectedAll" (change)="selecteAll('')">
+                            </th>
+                            <th (click)="sort('customerId')">Custormer ID&nbsp;<i class="fa fa-sort"></i></th>
+                            <th (click)="sort('fname')">First Name&nbsp;<i class="fa fa-sort"></i></th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cust of customerList | orderBy: key: reverse | filter: searchString  | paginate: {itemsPerPage:pageSize,currentPage:p}; let i index">
+                            <td>
+                                <input id="checkAll" class="" type="checkbox" name="'allSel-'+(pageSize*p)+i-pageSize"
+                                [checked]="cust.selected" #checkedBx
+                                (change)="checkIfAllSelected((pageSize*p)+i-pageSize, checkedBx.checked, cust, i)">                                
+                            </td>
+                            <td>{{cust.custId}}</td>
+                            <td>{{cust.fName}}</td>
+                            <td>{{cust.lName}}</td>
+                            <td>{{cust.email}}</td>
+                            <td>{{cust.mobile}}</td>
+                            <td class="text-center">
+                                <ng-container>
+                                    <i *ngIf="cust.status == 'PASS'" class="fa fa-thumbs-up" title="Up"
+                                        style="font-size: 20px;color: yellowgreen;"></i>
+                                    <i *ngIf="cust.status == 'FAIL'" class="fa fa-thumbs-down" title="Down"
+                                        style="font-size: 20px;color: crimson;"></i>
+                                </ng-container>
+
+                            </td>
+                        </tr>
+                        <tr *ngIf="customerList.length === 0">
+                            <td colspan="7">No Records Found...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="d-flex justify-content-between p-2">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+                    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+                        <option [ngValue]="2">2 Items Per Page</option>
+                        <option [ngValue]="4">4 Items Per Page</option>
+                        <option [ngValue]="array.length">All Items Per Page</option>
+                    </select>
+                </div>
+
+                <!-- Grid End -->
+                <div class="text-center">
+                    <button class="btn btn-danger m-1" [disabled]="selectedCustomerIdListSize == 0" (click)='openDialog()'>Delete</button>
+                    <button class="btn btn-danger m-1" (click)="downloadCSV()">Download CSV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

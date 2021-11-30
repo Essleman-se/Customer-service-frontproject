@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.ng-select{
+    margin: 0px !important;
+    width: calc(100% - 125px) !important;
+    padding: 0px !important;
+    padding-bottom: 2px !important;
+    display: inline-block !important;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.container-fluid{
+    padding: 0px !important;
+}
+nav a.active {
+    color: #039be5
+}
+
+.table thead tr{
+    background-image: linear-gradient(to top right, #FF0000, #FFFFFF);
+    color: #fff;
+}
+
+html, body {
+    height: 100%;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 12px !important;}
+
+.toast-container * {
+    box-sizing: border-box;
+}
+/* .toast-container .ngx-toastr {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 6px;
+    padding: 15px 15px 15 50px;
+    width: 300px;
+    border-radius: 3px 3px 3px 3px;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    box-shadow: 0 0 12px #999999;
+    color: #FFFFFF;
+}
+.toast-container .ngx-toastr:hover {
+    box-shadow: 0 0 12px #000000;
+    opacity: 1;
+    cursor: pointer;
+}
+.toast-container.toast-top-center .ngx-toastr,
+.toast-container.toast-bottom-center .ngx-toastr {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+} */

@@ -1,0 +1,49 @@
+#header {
+    border-bottom: 2px solid #d9d9d9;
+}
+#brandspace {
+    background: #fff;
+    padding: 10px 0 10px 500px;
+    background-position-y: -12px;
+    width: 100%; min-height: 72px; color: #666;
+}
+
+#appName {
+    border-left: 2px solid #cccccc;
+    padding-left: 34px; 
+    font-size: 26px;
+    line-height: 1;
+    height: 48px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#globalTopNav {
+    width: 100%;
+    background: yellowgreen;
+    color: #999;
+    min-height: 30px;
+}
+
+#globalTopNavInt {
+    padding: 1px 17px;
+    line-height: 1.2;
+}
+
+#globalTopNav a {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 5px 4px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#globalTopNav a.nav-on, #globalTopNav a:hover, #globalTopNav a.activeNav {
+    color: #007bff;
+    background: #91c12f;
+    border-bottom: 1px solid #007bff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
