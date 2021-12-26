@@ -15,6 +15,7 @@ import { DialogConfirmation } from './rest/rest.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 //import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 
@@ -24,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HeaderComponent,  
     DialogConfirmation,  
-    routingComponents    
+    routingComponents, HomeComponent    
   ],
   imports: [
     BrowserModule,
